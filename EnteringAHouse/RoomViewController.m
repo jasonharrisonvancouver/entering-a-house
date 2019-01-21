@@ -9,7 +9,6 @@
 #import "RoomViewController.h"
 
 @interface RoomViewController ()
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightButton;
 
 @end
 
@@ -18,12 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.rightBarButtonItem = self.rightButton;
-    self.navigationItem.rightBarButtonItem.title = @"WTF";
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"WFT" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonPressed:)];
   
 }
 
-- (IBAction)rightButtonPressed:(UIBarButtonItem *)sender {
+- (void)rightButtonPressed:(UIBarButtonItem *)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 - (IBAction)buttonpressed:(id)sender {
 }
